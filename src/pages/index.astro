@@ -1,19 +1,134 @@
 ---
-layout: null
+import Layout from "../layouts/Layout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Child Learn System</title>
-  </head>
-  <body>
-    <div id="root">加载中...</div>
-    <script>
-      // 临时页面，将被 React 应用替代
-      document.getElementById('root').innerHTML = '<h1>欢迎来到 Child Learn System</h1><p>初始化中...</p>';
-    </script>
-  </body>
-</html>
+<Layout title="首页 - Child Learn System">
+  <div class="space-y-12">
+    {/* 英雄区 */}
+    <div class="text-center py-12">
+      <h1 class="text-5xl font-bold text-gray-900 mb-4">🎓 Child Learn System</h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+        AI 智能学习管理系统，为孩子打造个性化学习体验。
+        <br />
+        结合间隔重复算法和生成式 AI，让学习更高效、更有趣。
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a href="/upload" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition">
+          📤 开始上传
+        </a>
+        <a href="/dashboard" class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-lg transition">
+          📊 查看仪表板
+        </a>
+      </div>
+    </div>
+
+    {/* 功能卡片 */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <div class="text-4xl mb-4">📚</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">智能内容生成</h3>
+        <p class="text-gray-600">使用 DeepSeek、Qwen、GLM 等先进 LLM，自动生成高质量学习内容</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <div class="text-4xl mb-4">🔄</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">间隔重复学习</h3>
+        <p class="text-gray-600">基于 SM-2 算法的科学复习计划，优化学习曲线，提高记忆效率</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition">
+        <div class="text-4xl mb-4">📊</div>
+        <h3 class="text-xl font-bold text-gray-900 mb-2">学习进度追踪</h3>
+        <p class="text-gray-600">详细的掌握度统计、复习日程规划、知识图谱可视化</p>
+      </div>
+    </div>
+
+    {/* 使用流程 */}
+    <div class="bg-white rounded-lg shadow-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">�� 使用流程</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="relative">
+          <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mb-3">
+            1
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">📝 上传资料</h3>
+          <p class="text-sm text-gray-600">输入学习内容（词汇、语法、故事等）</p>
+        </div>
+        <div class="relative">
+          <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mb-3">
+            2
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">✨ AI 生成</h3>
+          <p class="text-sm text-gray-600">系统自动生成高质量学习卡片</p>
+        </div>
+        <div class="relative">
+          <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mb-3">
+            3
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">📖 开始学习</h3>
+          <p class="text-sm text-gray-600">按推荐顺序学习，记录掌握度</p>
+        </div>
+        <div class="relative">
+          <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg mb-3">
+            4
+          </div>
+          <h3 class="font-bold text-gray-900 mb-2">📊 追踪进度</h3>
+          <p class="text-sm text-gray-600">查看统计数据，优化学习计划</p>
+        </div>
+      </div>
+    </div>
+
+    {/* 核心特性 */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border-l-4 border-blue-500">
+        <h3 class="text-xl font-bold text-blue-900 mb-3">✨ SM-2 算法优化</h3>
+        <ul class="text-sm text-blue-800 space-y-2">
+          <li>✓ 针对儿童的掌握度调整</li>
+          <li>✓ 个性化复习间隔计算</li>
+          <li>✓ 自适应难度评估</li>
+          <li>✓ 学习效率科学验证</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border-l-4 border-purple-500">
+        <h3 class="text-xl font-bold text-purple-900 mb-3">🤖 多 LLM 支持</h3>
+        <ul class="text-sm text-purple-800 space-y-2">
+          <li>✓ DeepSeek - 深度求索</li>
+          <li>✓ Qwen - 阿里云通义</li>
+          <li>✓ GLM - 智谱大模型</li>
+          <li>✓ OpenAI - ChatGPT</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border-l-4 border-green-500">
+        <h3 class="text-xl font-bold text-green-900 mb-3">🔐 数据安全</h3>
+        <ul class="text-sm text-green-800 space-y-2">
+          <li>✓ 本地文件存储</li>
+          <li>✓ GitHub 自动备份</li>
+          <li>✓ 私密学习数据</li>
+          <li>✓ 离线工作支持</li>
+        </ul>
+      </div>
+      <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 border-l-4 border-orange-500">
+        <h3 class="text-xl font-bold text-orange-900 mb-3">📚 完整工作流</h3>
+        <ul class="text-sm text-orange-800 space-y-2">
+          <li>✓ 知识图谱关联</li>
+          <li>✓ Obsidian 导出</li>
+          <li>✓ 复习日程规划</li>
+          <li>✓ 学习统计分析</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* CTA */}
+    <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg p-12 text-center text-white">
+      <h3 class="text-3xl font-bold mb-4">🚀 立即开始</h3>
+      <p class="text-lg mb-8 opacity-90">为孩子创建第一个学习项目，体验 AI 智能学习的力量</p>
+      <a href="/upload" class="bg-white hover:bg-gray-100 text-blue-600 font-bold py-3 px-8 rounded-lg transition">
+        开始上传学习资料 →
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  :global(body) {
+    @apply antialiased;
+  }
+</style>
