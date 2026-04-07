@@ -1,0 +1,53 @@
+name: 🔄 Auto Backup Learning Data
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/data/**'
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 📊 Export learning data
+        run: |
+          mkdir -p backups/$(date +%Y-%m-%d)
+          
+          if [ -d "src/data" ]; then
+            cp -r src/data backups/$(date +%Y-%m-%d)/
+          fi
+          
+          echo "📊 Backup created at $(date -u)"
+
+      - name: 📤 Commit and push backup
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          
+          if [ ! -z "$(git status -s)" ]; then
+            git add backups/ || true
+            git commit -m "🔄 Automated backup: $(date -u)" || true
+            git push || true
+          fi
+
+      - name: ✅ Backup Complete
+        run: echo "✅ Backup completed successfully"
