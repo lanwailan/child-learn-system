@@ -10,6 +10,11 @@ export default defineConfig({
   vite: {
     ssr: {
       external: ['better-sqlite3']
+    },
+    build: {
+      rollupOptions: {
+        external: ['better-sqlite3']
+      }
     }
   }
 });

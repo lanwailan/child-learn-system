@@ -1,8 +1,6 @@
 import type { APIRoute } from 'astro';
 import { promises as fs } from 'fs';
 import path from 'path';
-import { createReadStream } from 'fs';
-import { promisify } from 'util';
 import type { APIResponse } from '../../lib/types';
 
 /**
