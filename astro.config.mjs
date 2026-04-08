@@ -4,7 +4,7 @@ import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
   integrations: [react(), tailwind()],
-  output: 'hybrid',
+  output: 'server',
   vite: {
     ssr: {
       external: ['better-sqlite3']

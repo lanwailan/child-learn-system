@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-BASE_URL="http://localhost:3000"
+BASE_URL="http://localhost:4321"
 CREATED_ITEM_ID=""
 
 echo -e "${BLUE}🚀 Child Learn System API Test Suite${NC}\n"
@@ -14,7 +14,7 @@ echo -e "${BLUE}🚀 Child Learn System API Test Suite${NC}\n"
 # Test 1: Health Check
 echo -e "${BLUE}[1/7] Testing Health Check...${NC}"
 response=$(curl -s "$BASE_URL/api/health")
-if echo "$response" | grep -q "success"; then
+if echo "$response" | grep -q "\"status\":\"ok\""; then
   echo -e "${GREEN}✅ Health check passed${NC}\n"
 else
   echo -e "${RED}❌ Health check failed${NC}"
