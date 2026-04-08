@@ -6,7 +6,7 @@ GREEN='\033[0;32m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-BASE_URL="http://localhost:4321"
+BASE_URL="http://localhost:4322"
 CREATED_ITEM_ID=""
 
 echo -e "${BLUE}🚀 Child Learn System API Test Suite${NC}\n"
